@@ -180,6 +180,19 @@ p {
     z-index: 1000;
 }
 
+.header-logo-section {
+    background-color: var(--white);
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.header-logo-section .nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
 .navbar {
     padding: var(--spacing-md) 0;
 }
@@ -187,7 +200,7 @@ p {
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
@@ -288,9 +301,25 @@ p {
     transition: var(--transition-fast);
 }
 
+/* Donate Button in Navigation */
+.nav-link.donate-btn {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.nav-link.donate-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
 /* Hero Section */
 .hero {
-    padding: calc(80px + var(--spacing-4xl)) 0 var(--spacing-4xl);
+    padding: calc(140px + var(--spacing-4xl)) 0 var(--spacing-4xl);
     background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
 }
 
@@ -449,6 +478,17 @@ p {
 
 .card-link:hover {
     gap: var(--spacing-md);
+}
+
+.project-count {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-align: center;
 }
 
 /* Featured Project */
@@ -794,12 +834,16 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+    
     .nav-menu {
         position: fixed;
-        top: 80px;
+        top: 140px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 140px);
         background-color: var(--white);
         flex-direction: column;
         justify-content: flex-start;
@@ -906,7 +950,7 @@ p {
     }
 
     .hero {
-        padding: calc(80px + var(--spacing-2xl)) 0 var(--spacing-2xl);
+        padding: calc(140px + var(--spacing-2xl)) 0 var(--spacing-2xl);
     }
 
     .hero-title {
@@ -975,7 +1019,7 @@ p {
 
 /* Page Header Styles */
 .page-header {
-    padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+    padding: calc(140px + var(--spacing-3xl)) 0 var(--spacing-3xl);
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     color: var(--white);
     text-align: center;

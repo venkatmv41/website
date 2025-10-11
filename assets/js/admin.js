@@ -390,6 +390,159 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Multimedia upload functionality
+    function addMultimediaSection() {
+        const adminContent = document.querySelector('.admin-content');
+        if (adminContent) {
+            const multimediaSection = document.createElement('div');
+            multimediaSection.className = 'admin-section';
+            multimediaSection.innerHTML = `
+                <h4>Multimedia Management</h4>
+                <button onclick="uploadImage()" class="admin-btn">Upload Images</button>
+                <button onclick="uploadVideo()" class="admin-btn admin-btn-secondary">Upload Videos</button>
+                <button onclick="uploadDocument()" class="admin-btn admin-btn-outline">Upload Documents</button>
+                <div id="multimedia-preview" class="multimedia-preview"></div>
+            `;
+            adminContent.appendChild(multimediaSection);
+        }
+    }
+
+    // Image upload functionality
+    window.uploadImage = function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.multiple = true;
+        input.addEventListener('change', function(e) {
+            handleFileUpload(e.target.files, 'image');
+        });
+        input.click();
+    };
+
+    // Video upload functionality
+    window.uploadVideo = function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'video/*';
+        input.multiple = true;
+        input.addEventListener('change', function(e) {
+            handleFileUpload(e.target.files, 'video');
+        });
+        input.click();
+    };
+
+    // Document upload functionality
+    window.uploadDocument = function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.pdf,.doc,.docx,.txt,.xlsx,.pptx';
+        input.multiple = true;
+        input.addEventListener('change', function(e) {
+            handleFileUpload(e.target.files, 'document');
+        });
+        input.click();
+    };
+
+    // Handle file upload
+    function handleFileUpload(files, type) {
+        const preview = document.getElementById('multimedia-preview');
+        if (!preview) return;
+
+        Array.from(files).forEach(file => {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const fileData = {
+                    name: file.name,
+                    type: file.type,
+                    size: file.size,
+                    data: e.target.result,
+                    uploadDate: new Date().toISOString()
+                };
+
+                // Store in content data
+                if (!contentData.multimedia) {
+                    contentData.multimedia = [];
+                }
+                contentData.multimedia.push(fileData);
+
+                // Create preview element
+                createFilePreview(fileData, preview);
+                
+                showMessage(`${file.name} uploaded successfully!`, 'success');
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // Create file preview
+    function createFilePreview(fileData, container) {
+        const previewItem = document.createElement('div');
+        previewItem.className = 'multimedia-item';
+        
+        let previewContent = '';
+        if (fileData.type.startsWith('image/')) {
+            previewContent = `<img src="${fileData.data}" alt="${fileData.name}" class="multimedia-thumb">`;
+        } else if (fileData.type.startsWith('video/')) {
+            previewContent = `<video src="${fileData.data}" class="multimedia-thumb" controls></video>`;
+        } else {
+            previewContent = `<div class="multimedia-thumb document-thumb"><i class="fas fa-file"></i></div>`;
+        }
+
+        previewItem.innerHTML = `
+            ${previewContent}
+            <div class="multimedia-info">
+                <div class="multimedia-name">${fileData.name}</div>
+                <div class="multimedia-size">${formatFileSize(fileData.size)}</div>
+                <div class="multimedia-actions">
+                    <button onclick="copyFileUrl('${fileData.data}')" class="multimedia-btn">Copy URL</button>
+                    <button onclick="deleteFile('${fileData.name}')" class="multimedia-btn multimedia-btn-danger">Delete</button>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(previewItem);
+    }
+
+    // Copy file URL to clipboard
+    window.copyFileUrl = function(url) {
+        navigator.clipboard.writeText(url).then(() => {
+            showMessage('File URL copied to clipboard!', 'success');
+        }).catch(() => {
+            showMessage('Failed to copy URL', 'error');
+        });
+    };
+
+    // Delete file
+    window.deleteFile = function(fileName) {
+        if (confirm(`Are you sure you want to delete ${fileName}?`)) {
+            if (contentData.multimedia) {
+                contentData.multimedia = contentData.multimedia.filter(file => file.name !== fileName);
+                refreshMultimediaPreview();
+                showMessage('File deleted successfully!', 'success');
+            }
+        }
+    };
+
+    // Format file size
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // Refresh multimedia preview
+    function refreshMultimediaPreview() {
+        const preview = document.getElementById('multimedia-preview');
+        if (preview && contentData.multimedia) {
+            preview.innerHTML = '';
+            contentData.multimedia.forEach(fileData => {
+                createFilePreview(fileData, preview);
+            });
+        }
+    }
+
     // Image upload functionality
     function initializeImageUpload() {
         const imageElements = document.querySelectorAll('img[data-editable="true"]');
@@ -508,8 +661,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAdmin();
     addImportButton();
     addBackupButtons();
+    addMultimediaSection();
     initializeImageUpload();
     initializeAutoSave();
+    
+    // Load multimedia on page load
+    setTimeout(() => {
+        refreshMultimediaPreview();
+    }, 100);
 
     // Update editable elements when admin mode changes
     document.addEventListener('adminModeChanged', function() {
