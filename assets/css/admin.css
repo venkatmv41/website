@@ -1,7 +1,7 @@
 /* Admin Panel Styles */
 .admin-toggle {
     position: fixed;
-    top: 100px;
+    top: 120px;
     right: 20px;
     width: 50px;
     height: 50px;
@@ -382,7 +382,7 @@
 
     .admin-toggle {
         right: 15px;
-        top: 90px;
+        top: 110px;
         width: 45px;
         height: 45px;
     }

@@ -1,185 +1,262 @@
-# Secure Admin Panel - Setup & Usage Guide
+# NGO Website Admin Panel
 
-## 🔐 Security Features
+A comprehensive, visual admin panel for managing NGO website content without touching code.
 
-This admin panel includes enterprise-level security features:
+## 🚀 Getting Started
 
-- **256-bit AES Encryption**: All session data is encrypted
-- **Brute Force Protection**: Account lockout after 3 failed attempts
-- **Session Management**: 2-hour sessions with automatic timeout
-- **CSRF Protection**: Cross-site request forgery prevention
-- **Activity Logging**: All admin actions are logged
-- **Secure Authentication**: SHA-256 password hashing
+### Login Credentials
+- **Email:** admin@ngo.org
+- **Password:** Admin123!
 
-## 🚀 Quick Start
+### Accessing the Admin Panel
+1. Visit your website
+2. Click the green admin toggle button (top right)
+3. Or navigate directly to `/admin/login.html`
 
-### 1. Access the Admin Panel
+## 📋 Features
 
-1. Navigate to `/admin/login.html`
-2. Use the default credentials:
-   - **Email**: `admin@ngo.org`
-   - **Password**: `AdminSecure123!`
+### 1. Dashboard Overview
+- Real-time statistics
+- Recent activity tracking
+- Quick access to all content types
+- Media library overview
 
-⚠️ **IMPORTANT**: Change the default password immediately after first login!
+### 2. Visual Content Management
 
-### 2. First Time Setup
+#### Pages Management
+- Create and edit website pages
+- Rich text editor for content
+- SEO meta descriptions
+- Hero section customization
+- Drag & drop image uploads
+- Live preview before publishing
 
-1. **Login** with default credentials
-2. **Change Password**: Go to Settings → Security
-3. **Create Backup**: Go to Settings → Backup & Restore
-4. **Test Features**: Explore all sections to ensure everything works
+#### Projects Showcase
+- Project information management
+- Status tracking (Ongoing/Completed/Planned)
+- Budget and beneficiary tracking
+- Location mapping
+- Image galleries
+- Outcome documentation
+- Partner listings
 
-## 📋 Features Overview
+#### Focus Areas
+- Strategic priority management
+- Icon customization
+- Color theming
+- Goal and achievement tracking
+- Statistics management
+- Related project linking
 
-### Dashboard
-- Overview of content statistics
-- Recent activity log
-- Quick access to all sections
+### 3. Media Management
+- **Upload Methods:**
+  - Drag & drop files
+  - Click to browse
+  - Direct camera capture (mobile)
 
-### Content Management
-- **Projects**: Manage project information, status, and media
-- **Pages**: Create and edit website pages
-- **Focus Areas**: Manage organizational focus areas
+- **Image Handling:**
+  - Automatic thumbnail generation
+  - Alt text for accessibility
+  - Caption support
+  - Multiple placement options:
+    - Hero Image (top banner)
+    - Gallery (image galleries)
+    - Inline (within content)
 
-### Media Manager
-- **Drag & Drop Upload**: Images, videos, documents
-- **Gallery Management**: Organize and categorize media
-- **Alt Text & Captions**: Accessibility features
-- **Preview & Download**: Full media management
+- **File Types Supported:**
+  - Images: JPG, PNG, GIF, WebP
+  - Videos: MP4, WebM, AVI
+  - Documents: PDF, DOC, DOCX, TXT, XLSX, PPT
 
-### Security Features
-- **Session Timeout**: Automatic logout after inactivity
-- **Account Lockout**: Protection against brute force attacks
-- **Activity Logging**: Track all admin actions
-- **Backup & Restore**: Data protection
+### 4. Form-Based Editing
+All editing is done through intuitive forms with:
+- **Visual Fields:**
+  - Rich text editors (no HTML knowledge needed)
+  - Color pickers
+  - Date selectors
+  - Dropdown menus
+  - Checkboxes and toggles
 
-## 🛡️ Security Best Practices
+- **Smart Features:**
+  - Auto-slug generation from titles
+  - Character counting
+  - Field validation
+  - Inline help text
+  - Preview functionality
 
-### Password Security
-- Use strong passwords (8+ characters, mixed case, numbers, symbols)
-- Change default password immediately
-- Don't share login credentials
+## 🎨 Content Types
 
-### Session Security
-- Always logout when finished
-- Don't leave admin panel open on shared computers
-- Sessions expire after 2 hours automatically
+### Pages
+Perfect for static content like About, Mission, Vision, etc.
+- Page title and URL customization
+- Hero section with image and text
+- Rich content areas
+- Sidebar content
+- SEO optimization
+- Publish/draft status
+
+### Projects
+Showcase your NGO's work and impact:
+- Project descriptions and summaries
+- Status tracking
+- Location and duration
+- Budget information
+- Beneficiary counts
+- Image galleries
+- Outcome documentation
+- Call-to-action buttons
+
+### Focus Areas
+Define your organization's strategic priorities:
+- Area descriptions
+- Custom icons and colors
+- Goal setting
+- Achievement tracking
+- Related project connections
+- Impact statistics
+
+## 🔒 Security Features
+
+### Authentication
+- Secure login with password hashing
+- Session timeout protection
+- Brute force protection (30 attempts, 15-minute lockout)
+- CSRF protection
+- Automatic session extension
 
 ### Data Protection
-- Create regular backups
-- Export content before major changes
-- Monitor activity logs for suspicious activity
+- Automatic backups
+- Version control
+- Input validation
+- Secure file uploads
+- XSS protection
 
-## 🔧 Configuration
+## 💾 Data Management
 
-### Changing Admin Credentials
+### Automatic Saving
+- Real-time autosave as you type
+- Manual save confirmation
+- Backup before major changes
+- Change tracking
 
-To change the admin email and password, edit `admin/auth.js`:
+### Import/Export
+- **Export Options:**
+  - Full content backup (JSON)
+  - Individual content types
+  - Media library
 
-```javascript
-this.adminCredentials = {
-    email: 'your-new-email@domain.com',
-    // Generate new password hash using SHA-256
-    passwordHash: 'your-new-password-hash'
-};
-```
+- **Import Options:**
+  - Restore from backup
+  - Merge with existing content
+  - Media library restoration
 
-### Security Settings
+### Storage
+- Browser local storage for drafts
+- Automatic cleanup of old data
+- Media file optimization
+- Backup versioning
 
-Adjust security parameters in `admin/auth.js`:
+## 📱 Mobile-Friendly
 
-```javascript
-this.maxLoginAttempts = 3;        // Failed login attempts before lockout
-this.lockoutDuration = 15 * 60 * 1000;  // 15 minutes lockout
-this.sessionDuration = 2 * 60 * 60 * 1000;  // 2 hours session
-```
+The admin panel works perfectly on:
+- Desktop computers
+- Tablets (iPad, Android tablets)
+- Smartphones (iPhone, Android phones)
+- Touch-friendly interface
+- Responsive design
+- Optimized for mobile editing
 
-## 📱 Usage Guide
+## 🎯 Best Practices
 
-### Adding New Projects
+### Content Creation
+1. **Use descriptive titles** - They auto-generate URLs
+2. **Add alt text to images** - Important for accessibility
+3. **Write compelling summaries** - Used in previews and SEO
+4. **Set proper status** - Published/Draft/Featured
+5. **Preview before publishing** - Always check how it looks
 
-1. Go to **Projects** section
-2. Click **"Add New Project"**
-3. Fill in project details:
-   - Title, summary, description
-   - Status, focus area, location
-   - Dates, budget, beneficiaries
-   - Upload hero image and gallery
-   - Add outcomes and partners
-4. **Preview** before saving
-5. Click **"Create"** to save
+### Image Guidelines
+- **Recommended sizes:**
+  - Hero images: 1920x1080px
+  - Gallery images: 800x600px
+  - Thumbnails: Auto-generated
+- **File size:** Keep under 2MB for faster loading
+- **Format:** Use JPG for photos, PNG for graphics with transparency
 
-### Managing Media
+### SEO Optimization
+- Fill in meta descriptions (150-160 characters)
+- Use descriptive page titles
+- Add alt text to all images
+- Create meaningful URL slugs
+- Use headings properly in content
 
-1. Go to **Media Manager**
-2. **Drag & drop** files or click upload buttons
-3. Click on any media item to:
-   - Edit title, description, alt text
-   - Add tags for organization
-   - Copy URL for use in content
-   - Delete if no longer needed
+## 🔧 Technical Details
 
-### Content Editing
+### Browser Compatibility
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
 
-1. Select content type (Projects, Pages, Focus Areas)
-2. Click **"Edit"** on any item
-3. Use the rich text editor for formatting
-4. **Preview** changes before saving
-5. Save and publish when ready
+### File Limits
+- Maximum file size: 10MB
+- Maximum files per gallery: 50
+- Supported formats: Images, videos, documents
 
-## 🔍 Troubleshooting
+### Performance
+- Automatic image optimization
+- Lazy loading for large galleries
+- Efficient data storage
+- Fast search and filtering
+
+## 🆘 Troubleshooting
 
 ### Login Issues
-- **Account Locked**: Wait 15 minutes or clear browser storage
-- **Wrong Credentials**: Check email/password carefully
-- **Session Expired**: Login again (sessions last 2 hours)
+- **Forgot password?** Use: Admin123!
+- **Account locked?** Wait 15 minutes
+- **Can't access?** Clear browser cache
 
-### Upload Issues
-- **File Too Large**: Check file size limits
-- **Unsupported Format**: Use JPG, PNG, GIF for images
-- **Upload Failed**: Check internet connection
+### Upload Problems
+- Check file size (max 10MB)
+- Ensure supported format
+- Try different browser
+- Check internet connection
 
-### General Issues
-- **Page Not Loading**: Clear browser cache
-- **Features Not Working**: Check browser console for errors
-- **Data Lost**: Restore from backup
+### Saving Issues
+- Check internet connection
+- Clear browser storage
+- Try refreshing the page
+- Export backup before major changes
 
-## 🚨 Emergency Access
-
-If you're locked out of the admin panel:
-
-1. **Clear Browser Storage**:
-   - Open browser developer tools (F12)
-   - Go to Application/Storage tab
-   - Clear localStorage and sessionStorage
-   - Refresh page
-
-2. **Reset Admin Credentials**:
-   - Edit `admin/auth.js` file
-   - Replace credentials with defaults
-   - Access with default login
+### Common Solutions
+1. **Refresh the page** - Solves most temporary issues
+2. **Clear browser cache** - Fixes loading problems
+3. **Check console errors** - Press F12 → Console tab
+4. **Export backup** - Before making major changes
 
 ## 📞 Support
 
-For technical support or questions:
-- Check browser console for error messages
-- Review activity logs in Settings
-- Create backup before making changes
-- Test changes in preview mode first
+If you encounter any issues:
+1. Try the troubleshooting steps above
+2. Check the browser console for errors
+3. Export your content as backup
+4. Take screenshots of any error messages
+5. Contact your technical support team
 
-## 🔄 Updates & Maintenance
+## 🔄 Updates and Maintenance
 
-### Regular Maintenance
-- Create weekly backups
-- Review activity logs monthly
-- Update passwords quarterly
-- Clear old media files as needed
+### Regular Tasks
+- Weekly content backups
+- Monthly media cleanup
+- Quarterly security updates
+- Annual content audit
 
 ### Version Updates
-- Always backup before updating
-- Test all features after updates
-- Review security logs after changes
+- Always backup before updates
+- Test in staging environment
+- Update admin credentials regularly
+- Monitor security logs
 
 ---
 
-**Remember**: This admin panel controls your entire website content. Always backup before making major changes and test thoroughly before publishing updates.
+**Remember:** This admin panel is designed to be user-friendly. If something seems too complicated, there's probably an easier way to do it. Look for the help tooltips and don't hesitate to explore!
