@@ -7,9 +7,8 @@ class AdminAuth {
         this.adminCredentials = {
             // Default admin credentials (should be changed immediately)
             email: 'admin@ngo.org',
-            // Password: '1234567!' (hashed with SHA-256)
-            passwordHash: '5b98d24627ffd6f159bbdea7303a2fe73e60d387871e0a5747f6ed2f5d9075af
-'
+            // Password: 'Admin123!' (hashed with SHA-256)
+            passwordHash: '3eb3fe66b31e3b4d10fa70b5cad49c7112294af6ae4e476a1c405155d45aa121'
         };
         
         this.init();

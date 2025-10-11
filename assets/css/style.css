@@ -186,7 +186,7 @@ p {
 
 .header-logo-section {
     background-color: var(--white);
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
     border-bottom: 1px solid var(--gray-200);
 }
 
@@ -198,7 +198,7 @@ p {
 }
 
 .navbar {
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
 }
 
 .nav-container {
@@ -324,7 +324,7 @@ p {
 
 /* Hero Section */
 .hero {
-    padding: calc(140px + var(--spacing-4xl)) 0 var(--spacing-4xl);
+    padding: calc(120px + var(--spacing-4xl)) 0 var(--spacing-4xl);
     background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
 }
 
@@ -845,10 +845,10 @@ p {
     
     .nav-menu {
         position: fixed;
-        top: 140px;
+        top: 120px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 140px);
+        height: calc(100vh - 120px);
         background-color: var(--white);
         flex-direction: column;
         justify-content: flex-start;
@@ -955,7 +955,7 @@ p {
     }
 
     .hero {
-        padding: calc(140px + var(--spacing-2xl)) 0 var(--spacing-2xl);
+        padding: calc(120px + var(--spacing-2xl)) 0 var(--spacing-2xl);
     }
 
     .hero-title {
