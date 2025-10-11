@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | NGO Website</title>
+    <meta name="description" content="Explore our comprehensive portfolio of development projects creating sustainable impact in communities worldwide.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Admin Toggle Button -->
+    <button id="adminToggle" class="admin-toggle" title="Toggle Edit Mode">
+        <i class="fas fa-edit"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-logo-section">
+            <div class="container">
+                <div class="nav-logo">
+                    <img src="../assets/images/logo.png" alt="NGO Logo" class="logo-img">
+                    <span class="logo-text editable" data-field="org_name">Your NGO Name</span>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-menu" id="navMenu">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">About <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="about/organization.html">About Organisation</a>
+                            <a href="about/team.html">Team</a>
+                            <a href="about/mission.html">Mission</a>
+                            <a href="about/vision.html">Vision</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Focus Areas <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="focus-areas/agriculture.html">Agriculture & Food Security</a>
+                            <a href="focus-areas/water.html">Water & WASH</a>
+                            <a href="focus-areas/watershed.html">Watershed & NRM</a>
+                            <a href="focus-areas/climate.html">Climate & Renewable Energy</a>
+                            <a href="focus-areas/livelihoods.html">Livelihoods & Skills</a>
+                        </div>
+                    </div>
+                    <a href="projects.html" class="nav-link active">Projects</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Impact <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="impact/metrics.html">Metrics</a>
+                            <a href="impact/case-studies.html">Case Studies</a>
+                            <a href="impact/methodology.html">Methodology</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Resources <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="resources/publications.html">Publications</a>
+                            <a href="resources/media.html">Media</a>
+                            <a href="resources/blog.html">Blog/Insights</a>
+                            <a href="resources/tenders.html">Tenders/Procurement</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="get-involved/volunteer.html">Volunteer/Intern</a>
+                            <a href="get-involved/partner.html">Partner with Us</a>
+                        </div>
+                    </div>
+                    <a href="news-events.html" class="nav-link">News & Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="get-involved/donate.html" class="nav-link donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title editable" data-field="projects_page_title">Our Projects</h1>
+                <p class="page-subtitle editable" data-field="projects_page_subtitle">Transforming communities through innovative and sustainable development initiatives.</p>
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>Projects</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Stats -->
+    <section class="impact-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item editable-stat" data-field="project_stat_1">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Projects Completed</div>
+                    <div class="stat-note">Since 2010</div>
+                </div>
+                <div class="stat-item editable-stat" data-field="project_stat_2">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Ongoing Projects</div>
+                    <div class="stat-note">Currently active</div>
+                </div>
+                <div class="stat-item editable-stat" data-field="project_stat_3">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Villages Reached</div>
+                    <div class="stat-note">Across multiple states</div>
+                </div>
+                <div class="stat-item editable-stat" data-field="project_stat_4">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Lives Impacted</div>
+                    <div class="stat-note">Direct beneficiaries</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Categories -->
+    <section class="focus-areas">
+        <div class="container">
+            <h2 class="section-title editable" data-field="project_categories_title">Project Categories</h2>
+            <p class="section-subtitle editable" data-field="project_categories_subtitle">Our projects span across multiple focus areas, each designed to create comprehensive and sustainable impact.</p>
+            <div class="focus-grid">
+                <div class="focus-card editable-card" data-field="project_category_agriculture">
+                    <div class="focus-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Agriculture & Food Security</h3>
+                    <p>Enhancing agricultural productivity and ensuring food security through sustainable farming practices and technology adoption.</p>
+                    <div class="project-count">
+                        <span class="editable" data-field="agriculture_project_count">65 Projects</span>
+                    </div>
+                </div>
+                <div class="focus-card editable-card" data-field="project_category_water">
+                    <div class="focus-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Water & WASH</h3>
+                    <p>Providing access to clean water, sanitation, and hygiene facilities to improve community health and well-being.</p>
+                    <div class="project-count">
+                        <span class="editable" data-field="water_project_count">52 Projects</span>
+                    </div>
+                </div>
+                <div class="focus-card editable-card" data-field="project_category_watershed">
+                    <div class="focus-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Watershed & NRM</h3>
+                    <p>Managing natural resources sustainably through watershed development and environmental conservation initiatives.</p>
+                    <div class="project-count">
+                        <span class="editable" data-field="watershed_project_count">38 Projects</span>
+                    </div>
+                </div>
+                <div class="focus-card editable-card" data-field="project_category_climate">
+                    <div class="focus-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Climate & Renewable Energy</h3>
+                    <p>Building climate resilience and promoting renewable energy solutions for sustainable development.</p>
+                    <div class="project-count">
+                        <span class="editable" data-field="climate_project_count">42 Projects</span>
+                    </div>
+                </div>
+                <div class="focus-card editable-card" data-field="project_category_livelihoods">
+                    <div class="focus-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Livelihoods & Skills</h3>
+                    <p>Creating sustainable livelihood opportunities through skill development and entrepreneurship programs.</p>
+                    <div class="project-count">
+                        <span class="editable" data-field="livelihoods_project_count">48 Projects</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="related-projects">
+        <div class="container">
+            <h2 class="section-title editable" data-field="featured_projects_title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card editable-card" data-field="featured_project_1">
+                    <div class="project-image">
+                        <img src="../assets/images/project-water-management.jpg" alt="Water Management Project" class="project-img">
+                        <div class="project-status ongoing">Ongoing</div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Sustainable Water Management Initiative</h4>
+                        <p>Transforming water access and management in drought-prone regions through innovative rainwater harvesting and groundwater recharge systems.</p>
+                        <div class="project-meta">
+                            <div class="project-location">Rajasthan, India</div>
+                            <div class="project-duration">2022-2025</div>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card editable-card" data-field="featured_project_2">
+                    <div class="project-image">
+                        <img src="../assets/images/project-agriculture.jpg" alt="Agriculture Project" class="project-img">
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Climate-Smart Agriculture Program</h4>
+                        <p>Enhancing agricultural productivity and resilience through climate-smart practices and technology adoption among smallholder farmers.</p>
+                        <div class="project-meta">
+                            <div class="project-location">Maharashtra, India</div>
+                            <div class="project-duration">2020-2023</div>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card editable-card" data-field="featured_project_3">
+                    <div class="project-image">
+                        <img src="../assets/images/project-renewable-energy.jpg" alt="Renewable Energy Project" class="project-img">
+                        <div class="project-status ongoing">Ongoing</div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Community Solar Energy Initiative</h4>
+                        <p>Providing clean, affordable energy access to rural communities through community-owned solar installations and energy cooperatives.</p>
+                        <div class="project-meta">
+                            <div class="project-location">Gujarat, India</div>
+                            <div class="project-duration">2023-2026</div>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card editable-card" data-field="featured_project_4">
+                    <div class="project-image">
+                        <img src="../assets/images/project-livelihoods.jpg" alt="Livelihoods Project" class="project-img">
+                        <div class="project-status ongoing">Ongoing</div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Women's Entrepreneurship Program</h4>
+                        <p>Empowering rural women through skill development, microfinance, and market linkages to create sustainable livelihood opportunities.</p>
+                        <div class="project-meta">
+                            <div class="project-location">Odisha, India</div>
+                            <div class="project-duration">2021-2024</div>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card editable-card" data-field="featured_project_5">
+                    <div class="project-image">
+                        <img src="../assets/images/project-watershed.jpg" alt="Watershed Project" class="project-img">
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Integrated Watershed Development</h4>
+                        <p>Restoring degraded landscapes and improving water security through comprehensive watershed management and community participation.</p>
+                        <div class="project-meta">
+                            <div class="project-location">Telangana, India</div>
+                            <div class="project-duration">2019-2022</div>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card editable-card" data-field="featured_project_6">
+                    <div class="project-image">
+                        <img src="../assets/images/project-education.jpg" alt="Education Project" class="project-img">
+                        <div class="project-status ongoing">Ongoing</div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Digital Literacy & Skills Program</h4>
+                        <p>Bridging the digital divide by providing technology access and digital skills training to rural youth and women.</p>
+                        <div class="project-meta">
+                            <div class="project-location">Bihar, India</div>
+                            <div class="project-duration">2022-2025</div>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Approach -->
+    <section class="approach-section">
+        <div class="container">
+            <h2 class="section-title editable" data-field="project_approach_title">Our Project Approach</h2>
+            <div class="approach-grid">
+                <div class="approach-item editable-card" data-field="approach_1">
+                    <div class="approach-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Community-Centered</h4>
+                    <p>Every project begins with extensive community consultation and participatory planning to ensure local ownership and sustainability.</p>
+                </div>
+                <div class="approach-item editable-card" data-field="approach_2">
+                    <div class="approach-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Evidence-Based</h4>
+                    <p>All interventions are designed based on rigorous baseline studies, needs assessments, and scientific evidence.</p>
+                </div>
+                <div class="approach-item editable-card" data-field="approach_3">
+                    <div class="approach-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h4>Sustainable Solutions</h4>
+                    <p>Long-term sustainability is built into every project through capacity building, institutional strengthening, and exit strategies.</p>
+                </div>
+                <div class="approach-item editable-card" data-field="approach_4">
+                    <div class="approach-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Partnership-Driven</h4>
+                    <p>We work closely with local organizations, government agencies, and international partners to maximize impact and reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title editable" data-field="projects_cta_title">Support Our Projects</h2>
+                <p class="cta-subtitle editable" data-field="projects_cta_subtitle">Your support enables us to expand our reach and create lasting impact in more communities. Join us in transforming lives through sustainable development.</p>
+                <div class="cta-buttons">
+                    <a href="get-involved/donate.html" class="btn btn-primary btn-large">Fund a Project</a>
+                    <a href="get-involved/partner.html" class="btn btn-outline btn-large">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../assets/images/logo.png" alt="NGO Logo" class="footer-logo-img">
+                        <span class="footer-logo-text editable" data-field="footer_org_name">Your NGO Name</span>
+                    </div>
+                    <p class="footer-description editable" data-field="footer_description">
+                        Dedicated to creating sustainable impact through community-driven development initiatives across agriculture, water, climate, and livelihoods.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about/organization.html">About Us</a></li>
+                        <li><a href="projects.html">Our Projects</a></li>
+                        <li><a href="impact/metrics.html">Impact</a></li>
+                        <li><a href="resources/publications.html">Resources</a></li>
+                        <li><a href="news-events.html">News & Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="get-involved/donate.html">Donate</a></li>
+                        <li><a href="get-involved/volunteer.html">Volunteer</a></li>
+                        <li><a href="get-involved/partner.html">Partner</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item editable" data-field="footer_address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Development Street, City, State 12345</span>
+                        </div>
+                        <div class="contact-item editable" data-field="footer_phone">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 12345 67890</span>
+                        </div>
+                        <div class="contact-item editable" data-field="footer_email">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@yourngo.org</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright editable" data-field="copyright">
+                        © 2024 Your NGO Name. All rights reserved.
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Transparency</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
+            <h3>Content Editor</h3>
+            <button id="closeAdmin" class="close-admin">×</button>
+        </div>
+        <div class="admin-content">
+            <div class="admin-section">
+                <h4>Quick Actions</h4>
+                <button onclick="saveContent()" class="admin-btn">Save Changes</button>
+                <button onclick="resetContent()" class="admin-btn admin-btn-secondary">Reset</button>
+                <button onclick="exportContent()" class="admin-btn admin-btn-outline">Export Data</button>
+            </div>
+            <div class="admin-section">
+                <h4>Edit Instructions</h4>
+                <p>Click on any highlighted text to edit it. Changes are saved automatically when you click "Save Changes".</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>
