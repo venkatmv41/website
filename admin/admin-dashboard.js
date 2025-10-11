@@ -17,10 +17,14 @@ class AdminDashboard {
             { path: 'pages/focus-areas/agriculture.html', name: 'Focus Areas - Agriculture' }
         ];
         
+        this.auth = null;
         this.init();
     }
 
-    init() {
+    async init() {
+        // Check authentication first
+        await this.checkAuthentication();
+        
         this.setupNavigation();
         this.setupEventListeners();
         this.initializeQuillEditor();
@@ -28,6 +32,149 @@ class AdminDashboard {
         this.setupMediaManager();
         this.setupPageEditor();
         this.loadStoredData();
+        this.setupSecurityFeatures();
+    }
+
+    async checkAuthentication() {
+        // Wait for auth system to be available
+        if (typeof AdminAuth !== 'undefined') {
+            this.auth = new AdminAuth();
+            
+            // Check if user is authenticated
+            const isAuthenticated = await this.auth.checkExistingSession();
+            
+            if (!isAuthenticated) {
+                // Redirect to login page
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Load user session data
+            const sessionData = await this.auth.getSessionData();
+            if (sessionData) {
+                this.displayUserInfo(sessionData);
+            }
+        } else {
+            // Fallback: redirect to login if auth system not loaded
+            console.error('Authentication system not loaded');
+            window.location.href = 'login.html';
+        }
+    }
+
+    displayUserInfo(sessionData) {
+        // Add user info to header
+        const header = document.querySelector('.admin-header');
+        if (header && sessionData.email) {
+            const userInfo = document.createElement('div');
+            userInfo.className = 'admin-user-info';
+            userInfo.innerHTML = `
+                <div class="user-details">
+                    <span class="user-email">${sessionData.email}</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+                <button onclick="adminDashboard.logout()" class="btn btn-outline" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            `;
+            
+            // Insert before existing actions
+            const actions = header.querySelector('.admin-actions');
+            if (actions) {
+                header.insertBefore(userInfo, actions);
+            } else {
+                header.appendChild(userInfo);
+            }
+        }
+    }
+
+    setupSecurityFeatures() {
+        // Add logout functionality
+        document.addEventListener('keydown', (e) => {
+            // Ctrl+Shift+L for quick logout
+            if (e.ctrlKey && e.shiftKey && e.key === 'L') {
+                e.preventDefault();
+                this.logout();
+            }
+        });
+
+        // Add session timeout warning
+        this.setupSessionWarning();
+        
+        // Add CSRF protection to forms
+        this.addCSRFProtection();
+    }
+
+    setupSessionWarning() {
+        // Warn user 5 minutes before session expires
+        const warningTime = 5 * 60 * 1000; // 5 minutes
+        const sessionDuration = 2 * 60 * 60 * 1000; // 2 hours
+        
+        setTimeout(() => {
+            if (this.auth && this.auth.isAuthenticated()) {
+                const confirmed = confirm('Your session will expire in 5 minutes. Would you like to extend it?');
+                if (confirmed) {
+                    // Refresh session by making a simple request
+                    this.refreshSession();
+                }
+            }
+        }, sessionDuration - warningTime);
+    }
+
+    async refreshSession() {
+        try {
+            const sessionData = await this.auth.getSessionData();
+            if (sessionData) {
+                // Extend session
+                sessionData.expiresAt = Date.now() + (2 * 60 * 60 * 1000);
+                const encryptedSession = await this.auth.encryptData(JSON.stringify(sessionData));
+                sessionStorage.setItem('admin_session', encryptedSession);
+                
+                this.showToast('Session extended successfully', 'success');
+            }
+        } catch (error) {
+            console.error('Failed to refresh session:', error);
+            this.showToast('Failed to extend session', 'error');
+        }
+    }
+
+    addCSRFProtection() {
+        // Add CSRF tokens to all forms
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            if (!form.querySelector('input[name="csrf_token"]')) {
+                const csrfInput = document.createElement('input');
+                csrfInput.type = 'hidden';
+                csrfInput.name = 'csrf_token';
+                csrfInput.value = this.generateCSRFToken();
+                form.appendChild(csrfInput);
+            }
+        });
+    }
+
+    generateCSRFToken() {
+        return 'csrf_' + Math.random().toString(36).substring(2) + Date.now().toString(36);
+    }
+
+    logout() {
+        if (this.auth) {
+            const confirmed = confirm('Are you sure you want to logout?');
+            if (confirmed) {
+                this.auth.logout();
+            }
+        }
+    }
+
+    initializeContentManager(contentType) {
+        if (window.contentManager) {
+            const container = contentType === 'focusAreas' ? 
+                document.getElementById('content-manager-container-focus') : 
+                document.getElementById('content-manager-container');
+            
+            if (container) {
+                window.contentManager.showContentType(contentType);
+            }
+        }
     }
 
     // Navigation
@@ -60,6 +207,8 @@ class AdminDashboard {
             pages: 'Page Editor',
             media: 'Media Manager',
             content: 'Content Editor',
+            projects: 'Projects',
+            'focus-areas': 'Focus Areas',
             settings: 'Settings'
         };
         document.getElementById('section-title').textContent = titles[section];
@@ -71,6 +220,10 @@ class AdminDashboard {
             this.refreshMediaGrid();
         } else if (section === 'content') {
             this.initializeContentEditor();
+        } else if (section === 'projects') {
+            this.initializeContentManager('projects');
+        } else if (section === 'focus-areas') {
+            this.initializeContentManager('focusAreas');
         }
     }
 

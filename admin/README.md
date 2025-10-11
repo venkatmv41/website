@@ -1,151 +1,185 @@
-# Admin Dashboard - Content Management System
+# Secure Admin Panel - Setup & Usage Guide
 
-## Overview
+## 🔐 Security Features
 
-This is a comprehensive admin dashboard for managing content across all pages of the website. It provides an intuitive interface for editing text, uploading media files, and managing website content without needing to edit HTML files directly.
+This admin panel includes enterprise-level security features:
 
-## Features
+- **256-bit AES Encryption**: All session data is encrypted
+- **Brute Force Protection**: Account lockout after 3 failed attempts
+- **Session Management**: 2-hour sessions with automatic timeout
+- **CSRF Protection**: Cross-site request forgery prevention
+- **Activity Logging**: All admin actions are logged
+- **Secure Authentication**: SHA-256 password hashing
 
-### 📊 Dashboard
-- Overview of website statistics
-- Recent activity tracking
-- Quick access to all management tools
-- System information and storage usage
+## 🚀 Quick Start
 
-### 📝 Page Editor
-- Select any page from the website to edit
-- Live preview of changes
-- Add new text sections and image sections
-- Visual content management interface
+### 1. Access the Admin Panel
 
-### 🖼️ Media Manager
-- **Easy Upload**: Drag and drop or click to upload
-- **Multiple Formats**: Support for images, videos, and documents
-- **Detailed Metadata**: Add titles, descriptions, alt text, and tags
-- **Search and Filter**: Find media files quickly
-- **Preview and Management**: View, edit, and delete media files
+1. Navigate to `/admin/login.html`
+2. Use the default credentials:
+   - **Email**: `admin@ngo.org`
+   - **Password**: `AdminSecure123!`
 
-### ✏️ Content Editor
-- **Rich Text Editor**: Powered by Quill.js with full formatting options
-- **Live Editing**: Real-time content editing with immediate preview
-- **Media Integration**: Insert uploaded media directly into content
-- **Cross-Page Editing**: Edit content across all website pages
+⚠️ **IMPORTANT**: Change the default password immediately after first login!
 
-### ⚙️ Settings
-- **Backup & Restore**: Create and restore complete system backups
-- **Import/Export**: Transfer content data between environments
-- **Cache Management**: Clear cache and refresh content
-- **System Information**: Monitor storage usage and system status
+### 2. First Time Setup
 
-## How to Use
+1. **Login** with default credentials
+2. **Change Password**: Go to Settings → Security
+3. **Create Backup**: Go to Settings → Backup & Restore
+4. **Test Features**: Explore all sections to ensure everything works
 
-### Accessing the Admin Dashboard
+## 📋 Features Overview
 
-1. **From any page**: Click the green "Dashboard" button (floating button on the right side)
-2. **Direct access**: Navigate to `/admin/index.html`
+### Dashboard
+- Overview of content statistics
+- Recent activity log
+- Quick access to all sections
 
-### Uploading Media Files
+### Content Management
+- **Projects**: Manage project information, status, and media
+- **Pages**: Create and edit website pages
+- **Focus Areas**: Manage organizational focus areas
 
-1. Go to the **Media Manager** section
-2. **Drag and drop** files onto the upload zone, or **click to browse**
-3. Supported formats:
-   - **Images**: JPG, PNG, GIF, WebP, SVG
-   - **Videos**: MP4, WebM, AVI, MOV
-   - **Documents**: PDF, DOC, DOCX, TXT, XLSX, PPTX
+### Media Manager
+- **Drag & Drop Upload**: Images, videos, documents
+- **Gallery Management**: Organize and categorize media
+- **Alt Text & Captions**: Accessibility features
+- **Preview & Download**: Full media management
 
-4. **Add detailed information**:
-   - **Title**: Give your media a descriptive title
-   - **Description**: Write detailed text about the media
-   - **Alt Text**: For accessibility (especially important for images)
-   - **Tags**: Add searchable tags for better organization
+### Security Features
+- **Session Timeout**: Automatic logout after inactivity
+- **Account Lockout**: Protection against brute force attacks
+- **Activity Logging**: Track all admin actions
+- **Backup & Restore**: Data protection
 
-### Editing Page Content
+## 🛡️ Security Best Practices
 
-1. Go to **Page Editor** or **Content Editor**
-2. Select the page you want to edit from the dropdown
-3. Use the rich text editor to modify content
-4. **Insert media** by clicking the "Insert Media" button
-5. **Save changes** when finished
+### Password Security
+- Use strong passwords (8+ characters, mixed case, numbers, symbols)
+- Change default password immediately
+- Don't share login credentials
 
-### Managing Content
+### Session Security
+- Always logout when finished
+- Don't leave admin panel open on shared computers
+- Sessions expire after 2 hours automatically
 
-- **Save All Changes**: Use the main "Save All Changes" button to persist all modifications
-- **Preview Site**: Click "Preview Site" to see your changes live
-- **Create Backups**: Regularly backup your content from the Settings section
+### Data Protection
+- Create regular backups
+- Export content before major changes
+- Monitor activity logs for suspicious activity
 
-## Technical Details
+## 🔧 Configuration
 
-### File Structure
+### Changing Admin Credentials
+
+To change the admin email and password, edit `admin/auth.js`:
+
+```javascript
+this.adminCredentials = {
+    email: 'your-new-email@domain.com',
+    // Generate new password hash using SHA-256
+    passwordHash: 'your-new-password-hash'
+};
 ```
-admin/
-├── index.html          # Main dashboard interface
-├── admin-dashboard.css # Dashboard styling
-├── admin-dashboard.js  # Dashboard functionality
-└── README.md          # This documentation
+
+### Security Settings
+
+Adjust security parameters in `admin/auth.js`:
+
+```javascript
+this.maxLoginAttempts = 3;        // Failed login attempts before lockout
+this.lockoutDuration = 15 * 60 * 1000;  // 15 minutes lockout
+this.sessionDuration = 2 * 60 * 60 * 1000;  // 2 hours session
 ```
 
-### Storage
-- All content is stored in browser localStorage
-- Media files are stored as base64 data URLs
-- Automatic backup creation available
-- Export/import functionality for data portability
+## 📱 Usage Guide
 
-### Integration
-- Seamlessly integrates with existing admin system
-- Maintains compatibility with current content structure
-- Adds enhanced functionality without breaking existing features
+### Adding New Projects
 
-### Browser Compatibility
-- Modern browsers with ES6+ support
-- localStorage support required
-- File API support for media uploads
+1. Go to **Projects** section
+2. Click **"Add New Project"**
+3. Fill in project details:
+   - Title, summary, description
+   - Status, focus area, location
+   - Dates, budget, beneficiaries
+   - Upload hero image and gallery
+   - Add outcomes and partners
+4. **Preview** before saving
+5. Click **"Create"** to save
 
-## Key Features for Content Management
+### Managing Media
 
-### Rich Text Editing
-- **Headers**: H1-H6 formatting
-- **Text Formatting**: Bold, italic, underline, strikethrough
-- **Colors**: Text and background color options
-- **Alignment**: Left, center, right, justify
-- **Lists**: Ordered and unordered lists
-- **Quotes**: Blockquotes and code blocks
-- **Media**: Direct image and video insertion
-- **Links**: Easy link creation and management
+1. Go to **Media Manager**
+2. **Drag & drop** files or click upload buttons
+3. Click on any media item to:
+   - Edit title, description, alt text
+   - Add tags for organization
+   - Copy URL for use in content
+   - Delete if no longer needed
 
-### Media Management
-- **Batch Upload**: Upload multiple files at once
-- **File Organization**: Search, filter, and categorize media
-- **Metadata Management**: Comprehensive file information
-- **URL Generation**: Copy media URLs for use in content
-- **Preview System**: View media before insertion
+### Content Editing
 
-### Content Organization
-- **Page-Based Editing**: Edit content specific to each page
-- **Section Management**: Add and organize content sections
-- **Live Preview**: See changes in real-time
-- **Version Control**: Backup and restore capabilities
+1. Select content type (Projects, Pages, Focus Areas)
+2. Click **"Edit"** on any item
+3. Use the rich text editor for formatting
+4. **Preview** changes before saving
+5. Save and publish when ready
 
-## Best Practices
+## 🔍 Troubleshooting
 
-1. **Regular Backups**: Create backups before major changes
-2. **Descriptive Media**: Always add titles and descriptions to media files
-3. **Alt Text**: Include alt text for all images for accessibility
-4. **Organized Tags**: Use consistent tagging for better media organization
-5. **Preview Changes**: Always preview before publishing
-6. **Save Frequently**: Use the save function regularly to prevent data loss
+### Login Issues
+- **Account Locked**: Wait 15 minutes or clear browser storage
+- **Wrong Credentials**: Check email/password carefully
+- **Session Expired**: Login again (sessions last 2 hours)
 
-## Troubleshooting
+### Upload Issues
+- **File Too Large**: Check file size limits
+- **Unsupported Format**: Use JPG, PNG, GIF for images
+- **Upload Failed**: Check internet connection
 
-### Common Issues
-- **Media not loading**: Check file size and format compatibility
-- **Changes not saving**: Ensure localStorage is enabled
-- **Slow performance**: Clear cache and refresh content
+### General Issues
+- **Page Not Loading**: Clear browser cache
+- **Features Not Working**: Check browser console for errors
+- **Data Lost**: Restore from backup
 
-### Support
-For technical support or feature requests, refer to the main website documentation or contact the development team.
+## 🚨 Emergency Access
+
+If you're locked out of the admin panel:
+
+1. **Clear Browser Storage**:
+   - Open browser developer tools (F12)
+   - Go to Application/Storage tab
+   - Clear localStorage and sessionStorage
+   - Refresh page
+
+2. **Reset Admin Credentials**:
+   - Edit `admin/auth.js` file
+   - Replace credentials with defaults
+   - Access with default login
+
+## 📞 Support
+
+For technical support or questions:
+- Check browser console for error messages
+- Review activity logs in Settings
+- Create backup before making changes
+- Test changes in preview mode first
+
+## 🔄 Updates & Maintenance
+
+### Regular Maintenance
+- Create weekly backups
+- Review activity logs monthly
+- Update passwords quarterly
+- Clear old media files as needed
+
+### Version Updates
+- Always backup before updating
+- Test all features after updates
+- Review security logs after changes
 
 ---
 
-**Version**: 1.0.0  
-**Last Updated**: 2025-10-11  
-**Compatibility**: Modern browsers with localStorage support
+**Remember**: This admin panel controls your entire website content. Always backup before making major changes and test thoroughly before publishing updates.
