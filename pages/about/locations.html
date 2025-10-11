@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations - About Us | NGO Website</title>
+    <meta name="description" content="Discover our global presence and regional offices where we work to create sustainable impact in communities.">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Admin Toggle Button -->
+    <button id="adminToggle" class="admin-toggle" title="Toggle Edit Mode">
+        <i class="fas fa-edit"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="../../assets/images/logo.png" alt="NGO Logo" class="logo-img">
+                    <span class="logo-text editable" data-field="org_name">Your NGO Name</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link active">About <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="organization.html">Organization</a>
+                            <a href="governance.html">Governance</a>
+                            <a href="team.html">Team</a>
+                            <a href="locations.html" class="active">Locations</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Focus Areas <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../focus-areas/agriculture.html">Agriculture & Food Security</a>
+                            <a href="../focus-areas/water.html">Water & WASH</a>
+                            <a href="../focus-areas/watershed.html">Watershed & NRM</a>
+                            <a href="../focus-areas/climate.html">Climate & Renewable Energy</a>
+                            <a href="../focus-areas/livelihoods.html">Livelihoods & Skills</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Projects <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../projects/ongoing.html">Ongoing</a>
+                            <a href="../projects/completed.html">Completed</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Impact <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../impact/metrics.html">Metrics</a>
+                            <a href="../impact/case-studies.html">Case Studies</a>
+                            <a href="../impact/methodology.html">Methodology</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Resources <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../resources/publications.html">Publications</a>
+                            <a href="../resources/media.html">Media</a>
+                            <a href="../resources/blog.html">Blog/Insights</a>
+                            <a href="../resources/tenders.html">Tenders/Procurement</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../get-involved/donate.html">Donate</a>
+                            <a href="../get-involved/volunteer.html">Volunteer/Intern</a>
+                            <a href="../get-involved/partner.html">Partner with Us</a>
+                        </div>
+                    </div>
+                    <a href="../news-events.html" class="nav-link">News & Events</a>
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title editable" data-field="locations_page_title">Our Locations</h1>
+                <p class="page-subtitle editable" data-field="locations_page_subtitle">Discover our global presence and the communities where we work to create sustainable impact.</p>
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="#">About</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>Locations</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Presence -->
+    <section class="global-presence">
+        <div class="container">
+            <h2 class="section-title editable" data-field="global_presence_title">Global Presence</h2>
+            <div class="presence-stats">
+                <div class="presence-stat editable-stat" data-field="presence_stat_1">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">States</div>
+                    <div class="stat-note">Primary operations</div>
+                </div>
+                <div class="presence-stat editable-stat" data-field="presence_stat_2">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Districts</div>
+                    <div class="stat-note">Active presence</div>
+                </div>
+                <div class="presence-stat editable-stat" data-field="presence_stat_3">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Villages</div>
+                    <div class="stat-note">Direct intervention</div>
+                </div>
+                <div class="presence-stat editable-stat" data-field="presence_stat_4">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Regional Offices</div>
+                    <div class="stat-note">Operational centers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="location-map">
+        <div class="container">
+            <h2 class="section-title editable" data-field="map_title">Coverage Map</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Interactive Map Placeholder<br><small>Map showing our operational areas would be integrated here</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Offices -->
+    <section class="regional-offices">
+        <div class="container">
+            <h2 class="section-title editable" data-field="regional_offices_title">Regional Offices</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h4 class="editable" data-field="office_1_name">Northern Region - Delhi</h4>
+                    <p class="editable" data-field="office_1_address">123 Development Hub, Connaught Place, New Delhi - 110001</p>
+                    <p class="editable" data-field="office_1_coverage">Coverage: Delhi, Punjab, Haryana, Himachal Pradesh</p>
+                    <div class="location-stats">
+                        <div class="location-stat">
+                            <span class="location-stat-value editable" data-field="office_1_stat1_value">25</span>
+                            <span class="location-stat-label editable" data-field="office_1_stat1_label">Projects</span>
+                        </div>
+                        <div class="location-stat">
+                            <span class="location-stat-value editable" data-field="office_1_stat2_value">150K</span>
+                            <span class="location-stat-label editable" data-field="office_1_stat2_label">Beneficiaries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <h4 class="editable" data-field="office_2_name">Western Region - Mumbai</h4>
+                    <p class="editable" data-field="office_2_address">456 Social Impact Center, Bandra West, Mumbai - 400050</p>
+                    <p class="editable" data-field="office_2_coverage">Coverage: Maharashtra, Gujarat, Rajasthan</p>
+                    <div class="location-stats">
+                        <div class="location-stat">
+                            <span class="location-stat-value editable" data-field="office_2_stat1_value">35</span>
+                            <span class="location-stat-label editable" data-field="office_2_stat1_label">Projects</span>
+                        </div>
+                        <div class="location-stat">
+                            <span class="location-stat-value editable" data-field="office_2_stat2_value">200K</span>
+                            <span class="location-stat-label editable" data-field="office_2_stat2_label">Beneficiaries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <h4 class="editable" data-field="office_3_name">Southern Region - Bangalore</h4>
+                    <p class="editable" data-field="office_3_address">789 Innovation District, Koramangala, Bangalore - 560034</p>
+                    <p class="editable" data-field="office_3_coverage">Coverage: Karnataka, Tamil Nadu, Andhra Pradesh, Kerala</p>
+                    <div class="location-stats">
+                        <div class="location-stat">
+                            <span class="location-stat-value editable" data-field="office_3_stat1_value">40</span>
+                            <span class="location-stat-label editable" data-field="office_3_stat1_label">Projects</span>
+                        </div>
+                        <div class="location-stat">
+                            <span class="location-stat-value editable" data-field="office_3_stat2_value">180K</span>
+                            <span class="location-stat-label editable" data-field="office_3_stat2_label">Beneficiaries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <h4 class="editable" data-field="office_4_name">Eastern Region - Kolkata</h4>
+                    <p class="editable" data-field="office_4_address">321 Development Plaza, Salt Lake, Kolkata - 700091</p>
+                    <p class="editable" data-field="office_4_coverage">Coverage: West Bengal, Odisha, Jharkhand, Bihar</p>
+                    <div class="location-stats">
+                        <div class="location-stat">
+                            <span class="location-stat-value editable" data-field="office_4_stat1_value">30</span>
+                            <span class="location-stat-label editable" data-field="office_4_stat1_label">Projects</span>
+                        </div>
+                        <div class="location-stat">
+                            <span class="location-stat-value editable" data-field="office_4_stat2_value">120K</span>
+                            <span class="location-stat-label editable" data-field="office_4_stat2_label">Beneficiaries</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Field Offices -->
+    <section class="field-offices">
+        <div class="container">
+            <h2 class="section-title editable" data-field="field_offices_title">Field Offices</h2>
+            <p class="section-subtitle editable" data-field="field_offices_subtitle">Our field offices are strategically located to ensure direct community engagement and program implementation.</p>
+            
+            <div class="field-offices-grid">
+                <div class="field-office-category">
+                    <h3 class="editable" data-field="district_offices_title">District Offices</h3>
+                    <div class="office-list">
+                        <div class="office-item">
+                            <span class="office-name editable" data-field="district_office_1">Jaipur District Office</span>
+                            <span class="office-focus editable" data-field="district_office_1_focus">Water & Agriculture</span>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-name editable" data-field="district_office_2">Pune District Office</span>
+                            <span class="office-focus editable" data-field="district_office_2_focus">Climate & Livelihoods</span>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-name editable" data-field="district_office_3">Mysore District Office</span>
+                            <span class="office-focus editable" data-field="district_office_3_focus">Watershed & NRM</span>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-name editable" data-field="district_office_4">Cuttack District Office</span>
+                            <span class="office-focus editable" data-field="district_office_4_focus">Agriculture & WASH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-office-category">
+                    <h3 class="editable" data-field="block_offices_title">Block Offices</h3>
+                    <div class="office-list">
+                        <div class="office-item">
+                            <span class="office-name editable" data-field="block_office_1">Sikar Block Office</span>
+                            <span class="office-focus editable" data-field="block_office_1_focus">Water Management</span>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-name editable" data-field="block_office_2">Satara Block Office</span>
+                            <span class="office-focus editable" data-field="block_office_2_focus">Renewable Energy</span>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-name editable" data-field="block_office_3">Hassan Block Office</span>
+                            <span class="office-focus editable" data-field="block_office_3_focus">Sustainable Agriculture</span>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-name editable" data-field="block_office_4">Mayurbhanj Block Office</span>
+                            <span class="office-focus editable" data-field="block_office_4_focus">Tribal Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Centers -->
+    <section class="community-centers">
+        <div class="container">
+            <h2 class="section-title editable" data-field="community_centers_title">Community Resource Centers</h2>
+            <div class="centers-content">
+                <div class="centers-text">
+                    <p class="editable" data-field="centers_intro">Our Community Resource Centers serve as local hubs for knowledge sharing, capacity building, and program coordination. These centers are managed by trained community members and serve multiple villages in their vicinity.</p>
+                    
+                    <div class="centers-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="editable" data-field="center_feature_1_title">Training & Capacity Building</h4>
+                                <p class="editable" data-field="center_feature_1_desc">Regular training sessions on sustainable practices, technology adoption, and skill development.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="editable" data-field="center_feature_2_title">Digital Services</h4>
+                                <p class="editable" data-field="center_feature_2_desc">Internet access, digital literacy programs, and online service facilitation for rural communities.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="editable" data-field="center_feature_3_title">Community Meetings</h4>
+                                <p class="editable" data-field="center_feature_3_desc">Regular community gatherings for participatory planning and feedback collection.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="editable" data-field="center_feature_4_title">Equipment & Resources</h4>
+                                <p class="editable" data-field="center_feature_4_desc">Access to agricultural tools, water testing kits, and other technical resources.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="centers-stats">
+                    <div class="center-stat editable-stat" data-field="center_stat_1">
+                        <div class="stat-number">85</div>
+                        <div class="stat-label">Resource Centers</div>
+                        <div class="stat-note">Across all regions</div>
+                    </div>
+                    <div class="center-stat editable-stat" data-field="center_stat_2">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Villages Served</div>
+                        <div class="stat-note">Direct access</div>
+                    </div>
+                    <div class="center-stat editable-stat" data-field="center_stat_3">
+                        <div class="stat-number">25K</div>
+                        <div class="stat-label">Monthly Visitors</div>
+                        <div class="stat-note">Community members</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Regional Offices -->
+    <section class="contact-offices">
+        <div class="container">
+            <h2 class="section-title editable" data-field="contact_offices_title">Contact Our Offices</h2>
+            <p class="section-subtitle editable" data-field="contact_offices_subtitle">Get in touch with our regional teams for local partnerships, program information, or volunteer opportunities.</p>
+            <div class="contact-cta">
+                <a href="../contact.html" class="btn btn-primary btn-large">Contact Us</a>
+                <a href="../get-involved/partner.html" class="btn btn-outline btn-large">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="NGO Logo" class="footer-logo-img">
+                        <span class="footer-logo-text editable" data-field="footer_org_name">Your NGO Name</span>
+                    </div>
+                    <p class="footer-description editable" data-field="footer_description">
+                        Dedicated to creating sustainable impact through community-driven development initiatives across agriculture, water, climate, and livelihoods.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="organization.html">About Us</a></li>
+                        <li><a href="../projects/ongoing.html">Our Projects</a></li>
+                        <li><a href="../impact/metrics.html">Impact</a></li>
+                        <li><a href="../resources/publications.html">Resources</a></li>
+                        <li><a href="../news-events.html">News & Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="../get-involved/donate.html">Donate</a></li>
+                        <li><a href="../get-involved/volunteer.html">Volunteer</a></li>
+                        <li><a href="../get-involved/partner.html">Partner</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item editable" data-field="footer_address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Development Street, City, State 12345</span>
+                        </div>
+                        <div class="contact-item editable" data-field="footer_phone">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 12345 67890</span>
+                        </div>
+                        <div class="contact-item editable" data-field="footer_email">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@yourngo.org</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright editable" data-field="copyright">
+                        © 2024 Your NGO Name. All rights reserved.
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Transparency</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
+            <h3>Content Editor</h3>
+            <button id="closeAdmin" class="close-admin">×</button>
+        </div>
+        <div class="admin-content">
+            <div class="admin-section">
+                <h4>Quick Actions</h4>
+                <button onclick="saveContent()" class="admin-btn">Save Changes</button>
+                <button onclick="resetContent()" class="admin-btn admin-btn-secondary">Reset</button>
+                <button onclick="exportContent()" class="admin-btn admin-btn-outline">Export Data</button>
+            </div>
+            <div class="admin-section">
+                <h4>Edit Instructions</h4>
+                <p>Click on any highlighted text to edit it. Changes are saved automatically when you click "Save Changes".</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/admin.js"></script>
+</body>
+</html>

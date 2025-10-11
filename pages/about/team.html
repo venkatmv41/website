@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - About Us | NGO Website</title>
+    <meta name="description" content="Meet our dedicated team of professionals working to create sustainable impact in communities worldwide.">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Admin Toggle Button -->
+    <button id="adminToggle" class="admin-toggle" title="Toggle Edit Mode">
+        <i class="fas fa-edit"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="../../assets/images/logo.png" alt="NGO Logo" class="logo-img">
+                    <span class="logo-text editable" data-field="org_name">Your NGO Name</span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link active">About <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="organization.html">Organization</a>
+                            <a href="governance.html">Governance</a>
+                            <a href="team.html" class="active">Team</a>
+                            <a href="locations.html">Locations</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Focus Areas <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../focus-areas/agriculture.html">Agriculture & Food Security</a>
+                            <a href="../focus-areas/water.html">Water & WASH</a>
+                            <a href="../focus-areas/watershed.html">Watershed & NRM</a>
+                            <a href="../focus-areas/climate.html">Climate & Renewable Energy</a>
+                            <a href="../focus-areas/livelihoods.html">Livelihoods & Skills</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Projects <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../projects/ongoing.html">Ongoing</a>
+                            <a href="../projects/completed.html">Completed</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Impact <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../impact/metrics.html">Metrics</a>
+                            <a href="../impact/case-studies.html">Case Studies</a>
+                            <a href="../impact/methodology.html">Methodology</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Resources <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../resources/publications.html">Publications</a>
+                            <a href="../resources/media.html">Media</a>
+                            <a href="../resources/blog.html">Blog/Insights</a>
+                            <a href="../resources/tenders.html">Tenders/Procurement</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../get-involved/donate.html">Donate</a>
+                            <a href="../get-involved/volunteer.html">Volunteer/Intern</a>
+                            <a href="../get-involved/partner.html">Partner with Us</a>
+                        </div>
+                    </div>
+                    <a href="../news-events.html" class="nav-link">News & Events</a>
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title editable" data-field="team_page_title">Our Team</h1>
+                <p class="page-subtitle editable" data-field="team_page_subtitle">Meet the passionate professionals dedicated to creating lasting change in communities worldwide.</p>
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="#">About</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>Team</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title editable" data-field="leadership_title">Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="../../assets/images/team/ceo.jpg" alt="CEO" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name editable" data-field="ceo_name">Dr. Anjali Sharma</h3>
+                        <p class="member-position editable" data-field="ceo_position">Chief Executive Officer</p>
+                        <p class="member-bio editable" data-field="ceo_bio">With over 15 years of experience in international development, Dr. Sharma leads our organization's strategic vision and program implementation across multiple countries.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="../../assets/images/team/coo.jpg" alt="COO" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name editable" data-field="coo_name">Mr. Michael Rodriguez</h3>
+                        <p class="member-position editable" data-field="coo_position">Chief Operating Officer</p>
+                        <p class="member-bio editable" data-field="coo_bio">Michael oversees operational excellence and ensures efficient program delivery. His background in supply chain management brings valuable expertise to our field operations.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="../../assets/images/team/cfo.jpg" alt="CFO" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name editable" data-field="cfo_name">Ms. Rachel Kim</h3>
+                        <p class="member-position editable" data-field="cfo_position">Chief Financial Officer</p>
+                        <p class="member-bio editable" data-field="cfo_bio">Rachel ensures financial integrity and transparency across all operations. Her expertise in nonprofit financial management helps maximize impact per dollar invested.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Directors -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title editable" data-field="program_directors_title">Program Directors</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="../../assets/images/team/agriculture-director.jpg" alt="Agriculture Director" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name editable" data-field="agri_director_name">Dr. Ravi Patel</h3>
+                        <p class="member-position editable" data-field="agri_director_position">Director, Agriculture & Food Security</p>
+                        <p class="member-bio editable" data-field="agri_director_bio">Agricultural scientist with expertise in sustainable farming practices and food security initiatives. Leads our efforts to enhance agricultural productivity in rural communities.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="../../assets/images/team/water-director.jpg" alt="Water Director" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name editable" data-field="water_director_name">Ms. Fatima Al-Zahra</h3>
+                        <p class="member-position editable" data-field="water_director_position">Director, Water & WASH</p>
+                        <p class="member-bio editable" data-field="water_director_bio">Water resources engineer specializing in community-based water management systems. Champions innovative solutions for clean water access and sanitation.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="../../assets/images/team/climate-director.jpg" alt="Climate Director" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name editable" data-field="climate_director_name">Dr. James Thompson</h3>
+                        <p class="member-position editable" data-field="climate_director_position">Director, Climate & Renewable Energy</p>
+                        <p class="member-bio editable" data-field="climate_director_bio">Climate scientist focused on building community resilience to climate change. Develops renewable energy solutions and adaptation strategies for vulnerable populations.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="../../assets/images/team/livelihoods-director.jpg" alt="Livelihoods Director" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name editable" data-field="livelihood_director_name">Ms. Priya Gupta</h3>
+                        <p class="member-position editable" data-field="livelihood_director_position">Director, Livelihoods & Skills</p>
+                        <p class="member-bio editable" data-field="livelihood_director_bio">Development economist with expertise in microfinance and skills development. Creates opportunities for sustainable livelihoods and economic empowerment.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Teams -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title editable" data-field="regional_teams_title">Regional Teams</h2>
+            <p class="section-subtitle editable" data-field="regional_teams_subtitle">Our field teams work directly with communities to implement programs and ensure sustainable impact.</p>
+            
+            <div class="regional-stats">
+                <div class="stat-item editable-stat" data-field="regional_stat_1">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Field Staff</div>
+                    <div class="stat-note">Across all regions</div>
+                </div>
+                <div class="stat-item editable-stat" data-field="regional_stat_2">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Regional Offices</div>
+                    <div class="stat-note">In 8 states</div>
+                </div>
+                <div class="stat-item editable-stat" data-field="regional_stat_3">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Local Languages</div>
+                    <div class="stat-note">Spoken by our team</div>
+                </div>
+                <div class="stat-item editable-stat" data-field="regional_stat_4">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Local Hiring</div>
+                    <div class="stat-note">Community-based recruitment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Team -->
+    <section class="join-team-section">
+        <div class="container">
+            <div class="join-team-content">
+                <h2 class="section-title editable" data-field="join_team_title">Join Our Team</h2>
+                <p class="section-subtitle editable" data-field="join_team_subtitle">We're always looking for passionate individuals who share our commitment to sustainable development and community empowerment.</p>
+                
+                <div class="career-highlights">
+                    <div class="career-item">
+                        <div class="career-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4 class="editable" data-field="career_1_title">Global Impact</h4>
+                        <p class="editable" data-field="career_1_desc">Work on projects that create meaningful change in communities across multiple countries and regions.</p>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="editable" data-field="career_2_title">Professional Growth</h4>
+                        <p class="editable" data-field="career_2_desc">Access to continuous learning opportunities, training programs, and career advancement pathways.</p>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="editable" data-field="career_3_title">Purpose-Driven Work</h4>
+                        <p class="editable" data-field="career_3_desc">Be part of a mission-driven organization where your work directly contributes to positive social and environmental impact.</p>
+                    </div>
+                </div>
+                
+                <div class="career-cta">
+                    <a href="../get-involved/volunteer.html" class="btn btn-primary btn-large">View Open Positions</a>
+                    <a href="../contact.html" class="btn btn-outline btn-large">Contact HR</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="NGO Logo" class="footer-logo-img">
+                        <span class="footer-logo-text editable" data-field="footer_org_name">Your NGO Name</span>
+                    </div>
+                    <p class="footer-description editable" data-field="footer_description">
+                        Dedicated to creating sustainable impact through community-driven development initiatives across agriculture, water, climate, and livelihoods.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="organization.html">About Us</a></li>
+                        <li><a href="../projects/ongoing.html">Our Projects</a></li>
+                        <li><a href="../impact/metrics.html">Impact</a></li>
+                        <li><a href="../resources/publications.html">Resources</a></li>
+                        <li><a href="../news-events.html">News & Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="../get-involved/donate.html">Donate</a></li>
+                        <li><a href="../get-involved/volunteer.html">Volunteer</a></li>
+                        <li><a href="../get-involved/partner.html">Partner</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item editable" data-field="footer_address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Development Street, City, State 12345</span>
+                        </div>
+                        <div class="contact-item editable" data-field="footer_phone">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 12345 67890</span>
+                        </div>
+                        <div class="contact-item editable" data-field="footer_email">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@yourngo.org</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright editable" data-field="copyright">
+                        © 2024 Your NGO Name. All rights reserved.
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Transparency</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
+            <h3>Content Editor</h3>
+            <button id="closeAdmin" class="close-admin">×</button>
+        </div>
+        <div class="admin-content">
+            <div class="admin-section">
+                <h4>Quick Actions</h4>
+                <button onclick="saveContent()" class="admin-btn">Save Changes</button>
+                <button onclick="resetContent()" class="admin-btn admin-btn-secondary">Reset</button>
+                <button onclick="exportContent()" class="admin-btn admin-btn-outline">Export Data</button>
+            </div>
+            <div class="admin-section">
+                <h4>Edit Instructions</h4>
+                <p>Click on any highlighted text to edit it. Changes are saved automatically when you click "Save Changes".</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/admin.js"></script>
+</body>
+</html>
