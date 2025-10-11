@@ -6,16 +6,10 @@
     <title>Organization - About Us | NGO Website</title>
     <meta name="description" content="Learn about our organization's mission, vision, values, and history of creating sustainable impact in communities.">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/admin.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Admin Toggle Button -->
-    <button id="adminToggle" class="admin-toggle" title="Toggle Edit Mode">
-        <i class="fas fa-edit"></i>
-    </button>
-
     <!-- Header -->
     <header class="header">
         <div class="header-logo-section">
@@ -326,27 +320,7 @@
         <span>Dashboard</span>
     </a>
 
-    <!-- Admin Panel -->
-    <div id="adminPanel" class="admin-panel">
-        <div class="admin-header">
-            <h3>Content Editor</h3>
-            <button id="closeAdmin" class="close-admin">×</button>
-        </div>
-        <div class="admin-content">
-            <div class="admin-section">
-                <h4>Quick Actions</h4>
-                <button onclick="saveContent()" class="admin-btn">Save Changes</button>
-                <button onclick="resetContent()" class="admin-btn admin-btn-secondary">Reset</button>
-                <button onclick="exportContent()" class="admin-btn admin-btn-outline">Export Data</button>
-            </div>
-            <div class="admin-section">
-                <h4>Edit Instructions</h4>
-                <p>Click on any highlighted text to edit it. Changes are saved automatically when you click "Save Changes".</p>
-            </div>
-        </div>
-    </div>
 
     <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/admin.js"></script>
 </body>
 </html>
