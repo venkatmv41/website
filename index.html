@@ -6,15 +6,10 @@
     <title>Centre for Research and Development Studies</title>
     <meta name="description" content="Empowering communities through sustainable development across agriculture, water, climate, and livelihoods initiatives.">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/admin.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Admin Toggle Button -->
-    <button id="adminToggle" class="admin-toggle" title="Toggle Edit Mode">
-        <i class="fas fa-edit"></i>
-    </button>
 
     <!-- Header -->
     <header class="header">
@@ -22,7 +17,7 @@
             <div class="container">
                 <div class="nav-logo">
                     <img src="assets/images/logo.png" alt="CRDS Logo" class="logo-img">
-                    <span class="logo-text editable" data-field="org_name">Centre for Research and Development Studies</span>
+                    <span class="logo-text">Centre for Research and Development Studies</span>
                 </div>
             </div>
         </div>
@@ -62,11 +57,12 @@
                         <a href="#" class="nav-link">Resources <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
                             <a href="pages/resources/publications.html">Publications</a>
-                            <!--a href="pages/resources/media.html">Media</a>-->
+                            <a href="pages/resources/media.html">Media</a>
                             <a href="pages/resources/blog.html">Blog/Insights</a>
                             <a href="pages/resources/tenders.html">Tenders/Procurement</a>
                         </div>
-                        <a href="pages/resources/media.html" class="nav-link">Media <i class="fas fa-chevron-down"></i></a>
+                    </div>
+                    <div class="nav-dropdown">
                         <a href="#" class="nav-link">Get Involved <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
                             <a href="pages/get-involved/volunteer.html">Volunteer/Intern</a>
@@ -90,9 +86,9 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title editable" data-field="hero_title">Centre for Research and Development Studies</h1>
-                <h2 class="hero-subtitle-title editable" data-field="hero_subtitle_title">Creating Sustainable Impact</h2>
-                <p class="hero-subtitle editable" data-field="hero_subtitle">Empowering communities through innovative solutions in agriculture, water management, climate resilience, and sustainable livelihoods across rural landscapes.</p>
+                <h1 class="hero-title">Centre for Research and Development Studies</h1>
+                <h2 class="hero-subtitle-title">Creating Sustainable Impact</h2>
+                <p class="hero-subtitle">Empowering communities through innovative solutions in agriculture, water management, climate resilience, and sustainable livelihoods across rural landscapes.</p>
                 <div class="hero-cta">
                     <a href="pages/get-involved/donate.html" class="btn btn-primary">Donate Now</a>
                     <a href="pages/projects/ongoing.html" class="btn btn-secondary">See Our Projects</a>
@@ -108,22 +104,22 @@
     <section class="impact-stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item editable-stat" data-field="stat_1">
+                <div class="stat-item">
                     <div class="stat-number">500K+</div>
                     <div class="stat-label">Lives Impacted</div>
                     <div class="stat-note">Across 12 states</div>
                 </div>
-                <div class="stat-item editable-stat" data-field="stat_2">
+                <div class="stat-item">
                     <div class="stat-number">250+</div>
                     <div class="stat-label">Projects Completed</div>
                     <div class="stat-note">Since 2010</div>
                 </div>
-                <div class="stat-item editable-stat" data-field="stat_3">
+                <div class="stat-item">
                     <div class="stat-number">1000+</div>
                     <div class="stat-label">Villages Reached</div>
                     <div class="stat-note">Rural communities</div>
                 </div>
-                <div class="stat-item editable-stat" data-field="stat_4">
+                <div class="stat-item">
                     <div class="stat-number">50+</div>
                     <div class="stat-label">Partner Organizations</div>
                     <div class="stat-note">Collaborative network</div>
@@ -135,10 +131,10 @@
     <!-- Focus Areas -->
     <section class="focus-areas">
         <div class="container">
-            <h2 class="section-title editable" data-field="focus_areas_title">Our Focus Areas</h2>
-            <p class="section-subtitle editable" data-field="focus_areas_subtitle">We work across five key areas to create comprehensive and sustainable development solutions.</p>
+            <h2 class="section-title">Our Focus Areas</h2>
+            <p class="section-subtitle">We work across five key areas to create comprehensive and sustainable development solutions.</p>
             <div class="focus-grid">
-                <div class="focus-card editable-card" data-field="focus_agriculture">
+                <div class="focus-card">
                     <div class="focus-icon">
                         <i class="fas fa-seedling"></i>
                     </div>
@@ -146,7 +142,7 @@
                     <p>Enhancing agricultural productivity and ensuring food security through sustainable farming practices and technology adoption.</p>
                     <a href="pages/focus-areas/agriculture.html" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="focus-card editable-card" data-field="focus_water">
+                <div class="focus-card">
                     <div class="focus-icon">
                         <i class="fas fa-tint"></i>
                     </div>
@@ -154,7 +150,7 @@
                     <p>Providing access to clean water, sanitation, and hygiene facilities to improve community health and well-being.</p>
                     <a href="pages/focus-areas/water.html" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="focus-card editable-card" data-field="focus_watershed">
+                <div class="focus-card">
                     <div class="focus-icon">
                         <i class="fas fa-mountain"></i>
                     </div>
@@ -162,7 +158,7 @@
                     <p>Managing natural resources sustainably through watershed development and environmental conservation initiatives.</p>
                     <a href="pages/focus-areas/watershed.html" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="focus-card editable-card" data-field="focus_climate">
+                <div class="focus-card">
                     <div class="focus-icon">
                         <i class="fas fa-solar-panel"></i>
                     </div>
@@ -170,7 +166,7 @@
                     <p>Building climate resilience and promoting renewable energy solutions for sustainable development.</p>
                     <a href="pages/focus-areas/climate.html" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="focus-card editable-card" data-field="focus_livelihoods">
+                <div class="focus-card">
                     <div class="focus-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
@@ -187,21 +183,21 @@
         <div class="container">
             <div class="project-content">
                 <div class="project-text">
-                    <span class="project-tag editable" data-field="featured_tag">Featured Project</span>
-                    <h2 class="project-title editable" data-field="featured_title">Sustainable Water Management Initiative</h2>
-                    <p class="project-description editable" data-field="featured_description">Transforming water access and management in drought-prone regions through innovative rainwater harvesting, groundwater recharge, and community-led conservation practices.</p>
+                    <span class="project-tag">Featured Project</span>
+                    <h2 class="project-title">Sustainable Water Management Initiative</h2>
+                    <p class="project-description">Transforming water access and management in drought-prone regions through innovative rainwater harvesting, groundwater recharge, and community-led conservation practices.</p>
                     <div class="project-stats">
                         <div class="project-stat">
-                            <span class="stat-value editable" data-field="featured_stat1_value">15,000</span>
-                            <span class="stat-label editable" data-field="featured_stat1_label">People Benefited</span>
+                            <span class="stat-value">15,000</span>
+                            <span class="stat-label">People Benefited</span>
                         </div>
                         <div class="project-stat">
-                            <span class="stat-value editable" data-field="featured_stat2_value">50</span>
-                            <span class="stat-label editable" data-field="featured_stat2_label">Villages Covered</span>
+                            <span class="stat-value">50</span>
+                            <span class="stat-label">Villages Covered</span>
                         </div>
                         <div class="project-stat">
-                            <span class="stat-value editable" data-field="featured_stat3_value">200%</span>
-                            <span class="stat-label editable" data-field="featured_stat3_label">Water Table Increase</span>
+                            <span class="stat-value">200%</span>
+                            <span class="stat-label">Water Table Increase</span>
                         </div>
                     </div>
                     <a href="pages/projects/project-detail.html" class="btn btn-primary">View Project Details</a>
@@ -219,16 +215,16 @@
             <div class="testimonial-content">
                 <div class="testimonial-quote">
                     <i class="fas fa-quote-left quote-icon"></i>
-                    <blockquote class="editable" data-field="testimonial_quote">
+                    <blockquote>
                         "The water project has completely transformed our village. We no longer have to walk miles for clean water, and our children can now attend school regularly. This has given us hope for a better future."
                     </blockquote>
                 </div>
                 <div class="testimonial-author">
                     <img src="assets/images/testimonial-author.jpg" alt="Testimonial author" class="author-image">
                     <div class="author-info">
-                        <div class="author-name editable" data-field="testimonial_author">Priya Sharma</div>
-                        <div class="author-title editable" data-field="testimonial_title">Village Water Committee Member</div>
-                        <div class="author-location editable" data-field="testimonial_location">Rajasthan, India</div>
+                        <div class="author-name">Priya Sharma</div>
+                        <div class="author-title">Village Water Committee Member</div>
+                        <div class="author-location">Rajasthan, India</div>
                     </div>
                 </div>
             </div>
@@ -238,8 +234,8 @@
     <!-- Partners -->
     <section class="partners">
         <div class="container">
-            <h2 class="section-title editable" data-field="partners_title">Our Partners</h2>
-            <p class="section-subtitle editable" data-field="partners_subtitle">Working together with leading organizations to maximize our impact.</p>
+            <h2 class="section-title">Our Partners</h2>
+            <p class="section-subtitle">Working together with leading organizations to maximize our impact.</p>
             <div class="partners-grid">
                 <div class="partner-logo">
                     <img src="assets/images/partner1.png" alt="Partner 1" class="partner-img">
@@ -267,8 +263,8 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title editable" data-field="cta_title">Join Us in Creating Change</h2>
-                <p class="cta-subtitle editable" data-field="cta_subtitle">Your support can help us reach more communities and create lasting impact. Together, we can build a more sustainable and equitable future.</p>
+                <h2 class="cta-title">Join Us in Creating Change</h2>
+                <p class="cta-subtitle">Your support can help us reach more communities and create lasting impact. Together, we can build a more sustainable and equitable future.</p>
                 <div class="cta-buttons">
                     <a href="pages/get-involved/donate.html" class="btn btn-primary btn-large">Make a Donation</a>
                     <a href="pages/get-involved/volunteer.html" class="btn btn-secondary btn-large">Volunteer With Us</a>
@@ -285,9 +281,9 @@
                 <div class="footer-section">
                     <div class="footer-logo">
                         <img src="assets/images/logo.png" alt="NGO Logo" class="footer-logo-img">
-                        <span class="footer-logo-text editable" data-field="footer_org_name">Your NGO Name</span>
+                        <span class="footer-logo-text">Your NGO Name</span>
                     </div>
-                    <p class="footer-description editable" data-field="footer_description">
+                    <p class="footer-description">
                         Dedicated to creating sustainable impact through community-driven development initiatives across agriculture, water, climate, and livelihoods.
                     </p>
                     <div class="social-links">
@@ -320,15 +316,15 @@
                 <div class="footer-section">
                     <h3 class="footer-title">Contact Info</h3>
                     <div class="contact-info">
-                        <div class="contact-item editable" data-field="footer_address">
+                        <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>123 Development Street, City, State 12345</span>
                         </div>
-                        <div class="contact-item editable" data-field="footer_phone">
+                        <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <span>+91 12345 67890</span>
                         </div>
-                        <div class="contact-item editable" data-field="footer_email">
+                        <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <span>info@yourngo.org</span>
                         </div>
@@ -337,7 +333,7 @@
             </div>
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright editable" data-field="copyright">
+                    <p class="copyright">
                         © 2024 Your NGO Name. All rights reserved.
                     </p>
                     <div class="footer-bottom-links">
@@ -350,33 +346,8 @@
         </div>
     </footer>
 
-    <!-- Admin Dashboard Link -->
-    <a href="admin/index.html" class="admin-dashboard-link" title="Admin Dashboard">
-        <i class="fas fa-tachometer-alt"></i>
-        <span>Dashboard</span>
-    </a>
 
-    <!-- Admin Panel -->
-    <div id="adminPanel" class="admin-panel">
-        <div class="admin-header">
-            <h3>Content Editor</h3>
-            <button id="closeAdmin" class="close-admin">×</button>
-        </div>
-        <div class="admin-content">
-            <div class="admin-section">
-                <h4>Quick Actions</h4>
-                <button onclick="saveContent()" class="admin-btn">Save Changes</button>
-                <button onclick="resetContent()" class="admin-btn admin-btn-secondary">Reset</button>
-                <button onclick="exportContent()" class="admin-btn admin-btn-outline">Export Data</button>
-            </div>
-            <div class="admin-section">
-                <h4>Edit Instructions</h4>
-                <p>Click on any highlighted text to edit it. Changes are saved automatically when you click "Save Changes".</p>
-            </div>
-        </div>
-    </div>
 
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/admin.js"></script>
 </body>
 </html>
