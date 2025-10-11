@@ -1,14 +1,15 @@
 // Authentication and Security System
 class AdminAuth {
     constructor() {
-        this.maxLoginAttempts = 3;
+        this.maxLoginAttempts = 30;
         this.lockoutDuration = 15 * 60 * 1000; // 15 minutes
         this.sessionDuration = 2 * 60 * 60 * 1000; // 2 hours
         this.adminCredentials = {
             // Default admin credentials (should be changed immediately)
             email: 'admin@ngo.org',
-            // Password: 'AdminSecure123!' (hashed with SHA-256)
-            passwordHash: 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'
+            // Password: '1234567!' (hashed with SHA-256)
+            passwordHash: '5b98d24627ffd6f159bbdea7303a2fe73e60d387871e0a5747f6ed2f5d9075af
+'
         };
         
         this.init();
