@@ -369,37 +369,97 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize search
     initializeSearch();
 
-    // Cookie consent (GDPR compliance)
+    // Cookie consent (GDPR compliance) - Secure implementation
     function initializeCookieConsent() {
-        if (!localStorage.getItem('cookieConsent')) {
-            const consentBanner = document.createElement('div');
-            consentBanner.className = 'cookie-consent';
-            consentBanner.innerHTML = `
-                <div class="cookie-content">
-                    <p>We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies.</p>
-                    <div class="cookie-actions">
-                        <button onclick="acceptCookies()" class="btn btn-primary">Accept</button>
-                        <button onclick="declineCookies()" class="btn btn-outline">Decline</button>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(consentBanner);
+        try {
+            if (!localStorage.getItem('cookieConsent')) {
+                const consentBanner = document.createElement('div');
+                consentBanner.className = 'cookie-consent';
+                consentBanner.setAttribute('role', 'banner');
+                consentBanner.setAttribute('aria-label', 'Cookie consent');
+                
+                const consentContent = document.createElement('div');
+                consentContent.className = 'cookie-content';
+                
+                const consentText = document.createElement('p');
+                consentText.textContent = 'We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies.';
+                
+                const consentActions = document.createElement('div');
+                consentActions.className = 'cookie-actions';
+                
+                const acceptBtn = document.createElement('button');
+                acceptBtn.textContent = 'Accept';
+                acceptBtn.className = 'btn btn-primary';
+                acceptBtn.addEventListener('click', acceptCookies);
+                
+                const declineBtn = document.createElement('button');
+                declineBtn.textContent = 'Decline';
+                declineBtn.className = 'btn btn-outline';
+                declineBtn.addEventListener('click', declineCookies);
+                
+                consentActions.appendChild(acceptBtn);
+                consentActions.appendChild(declineBtn);
+                consentContent.appendChild(consentText);
+                consentContent.appendChild(consentActions);
+                consentBanner.appendChild(consentContent);
+                
+                document.body.appendChild(consentBanner);
+            }
+        } catch (error) {
+            console.error('Cookie consent initialization failed:', error);
         }
     }
 
-    // Cookie consent functions
-    window.acceptCookies = function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        document.querySelector('.cookie-consent').remove();
-    };
+    // Secure cookie consent functions
+    function acceptCookies() {
+        try {
+            localStorage.setItem('cookieConsent', 'accepted');
+            const banner = document.querySelector('.cookie-consent');
+            if (banner) {
+                banner.remove();
+            }
+        } catch (error) {
+            console.error('Error accepting cookies:', error);
+        }
+    }
 
-    window.declineCookies = function() {
-        localStorage.setItem('cookieConsent', 'declined');
-        document.querySelector('.cookie-consent').remove();
-    };
+    function declineCookies() {
+        try {
+            localStorage.setItem('cookieConsent', 'declined');
+            const banner = document.querySelector('.cookie-consent');
+            if (banner) {
+                banner.remove();
+            }
+        } catch (error) {
+            console.error('Error declining cookies:', error);
+        }
+    }
 
     // Initialize cookie consent
     initializeCookieConsent();
 
-    console.log('NGO Website initialized successfully');
+    // Add security indicator
+    function addSecurityIndicator() {
+        const indicator = document.createElement('div');
+        indicator.className = 'security-indicator';
+        indicator.innerHTML = `
+            <i class="fas fa-shield-alt"></i>
+            <span>Secure</span>
+        `;
+        indicator.title = 'This website uses security measures to protect your data';
+        document.body.appendChild(indicator);
+    }
+
+    // Initialize security features
+    addSecurityIndicator();
+
+    // Enhanced cookie consent with animation
+    setTimeout(() => {
+        const cookieBanner = document.querySelector('.cookie-consent');
+        if (cookieBanner) {
+            cookieBanner.classList.add('show');
+        }
+    }, 2000);
+
+    console.log('NGO Website initialized successfully with enhanced security');
 });

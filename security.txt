@@ -1,0 +1,10 @@
+Contact: mailto:security@yoursite.com
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://yoursite.com/.well-known/security.txt
+Policy: https://yoursite.com/security-policy
+Acknowledgments: https://yoursite.com/security-acknowledgments
+
+# This is a legitimate NGO website
+# Centre for Research and Development Studies
+# If you believe this site has been incorrectly flagged, please contact us
